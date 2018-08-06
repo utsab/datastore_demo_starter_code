@@ -34,15 +34,6 @@ class EnterInfoHandler(webapp2.RequestHandler):
         self.response.write("POST request was madfe to the EnterInfoHandler")
 
 class ShowMemeHandler(webapp2.RequestHandler):
-    def get(self):  # for a get request
-        results_template = the_jinja_env.get_template('templates/results.html')
-        the_variable_dict = {
-            "line1": "Hurrah for Utsab!", 
-            "line2": "Hurrah!!!!!!!!", 
-            "img_url": "http://www.atozpictures.com/admin/uploads/2016/11/cute-cockatiel-wallpapers.jpg"
-        }
-        self.response.write(results_template.render(the_variable_dict))
-
     def post(self):
         results_template = the_jinja_env.get_template('templates/results.html')
         meme_first_line = self.request.get('user-first-ln')
